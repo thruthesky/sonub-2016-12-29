@@ -72,12 +72,16 @@ Social Netowrk Hub
 * rmdir /s node_modules
 * npm install --verbose
 * git submodule update --init
+    * or git submodue add philgo-api xbase-api firebase-api into src folder
+        * git submodule add https://github.com/thruthesky/philgo-api src/app/philgo-api
+        * git submodule add https://github.com/thruthesky/xbase-api src/app/xbase-api
+        * git submodule add https://github.com/thruthesky/firebase-api src/app/firebase-api
+
 * git submodule foreach git checkout master
+
+
 * npm install @types/lodash --save
-* ionic plugin add cordova-plugin-device --save
-* npm install @ionic/cloud-angular --save
-* App ID and settings are already done in the code. @see http://docs.ionic.io/setup.html#app-id
-* cordova plugin add cordova-plugin-inappbrowser --save
+
 * npm install firebase --save
 
 

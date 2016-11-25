@@ -6,15 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppRouteModule } from './app.route.module';
 
 import { AppComponent } from './app.component';
-import { TwoComponent } from './two/two.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
+import { XbaseApiModule } from './xbase-api/xbase-api-module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TwoComponent,
     PageNotFoundComponent,
     HomePageComponent
   ],
@@ -22,7 +21,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRouteModule
+    AppRouteModule,
+    XbaseApiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
