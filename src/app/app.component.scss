@@ -1,0 +1,10 @@
+$color: blue;
+nav {
+    a {
+        color: $color;
+        text-decoration: none;
+        &.active {
+            background-color: yellow;
+        }
+    }
+}
