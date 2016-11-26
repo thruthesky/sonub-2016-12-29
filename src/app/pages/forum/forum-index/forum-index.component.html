@@ -1,0 +1,7 @@
+<h1>PhilGo Index</h1>
+<section *ngFor=" let name of forum_names ">
+  <h3>{{ 'forum.' + name | ln }}</h3>
+  <article *ngFor=" let post_id of forums[ name ] " (click)="onClickForum( post_id ) ">
+    <h4>{{ 'forum.' + post_id | ln }}</h4>
+  </article>
+</section>
