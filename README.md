@@ -1,12 +1,16 @@
-# SONUB
-
+# SONUB 0.2
 Social Netowrk Hub
+
+* Make it simple on its archtecture.
+    * No more ionic & ionic clould.
+    * No more xbase.
 
 
 # TODO
 
     - [] Convert sonub app to Angular 2. We will give up on Ionic 2.
-    - [] xbase-api needs https connection.
+    - [x] @deprecated - no more xbase
+        - xbase-api needs https connection.
         - philgo-api is already has https connection.
         - one possible way to solve is to use philgo.com MySQL for xbase api.
             -- converting may be simple since it is using ezSQL.
@@ -73,9 +77,8 @@ Social Netowrk Hub
 * npm install --verbose
 * git submodule update --init
     * or git submodue add philgo-api xbase-api firebase-api into src folder
-        * git submodule add https://github.com/thruthesky/philgo-api src/app/philgo-api
-        * git submodule add https://github.com/thruthesky/xbase-api src/app/xbase-api
-        * git submodule add https://github.com/thruthesky/firebase-api src/app/firebase-api
+        * git submodule add https://github.com/thruthesky/philgo-api src/app/api/philgo-api
+        * git submodule add https://github.com/thruthesky/firebase-api src/app/api/firebase-api
 
 * git submodule foreach git checkout master
 
