@@ -15,7 +15,7 @@ const appRoutes: Routes = [
 ];
 PHILGO_ROUTES.map( e => appRoutes.unshift( e ) );
 FORUM_ROUTES.map( e => appRoutes.unshift( e ) );
-console.log(appRoutes);
+//console.log('app.routing.module: ', appRoutes);
 
 @NgModule({
     imports: [ RouterModule.forRoot( appRoutes ) ],
