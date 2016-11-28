@@ -8,7 +8,10 @@ Social Netowrk Hub
 
 # TODO
 
-    - [] test on philgo api register.ts. member register login ==> data check ==> update ==> data check
+    - [] philgo post test crud.
+    - [] philgo point update.
+    - [] @done test on philgo api register.ts. member register login ==> data check ==> update ==> data check
+
     - [] @fileupload do the file upload on file.philgo.com for security and maintainability.
 
     - [] Convert sonub app to Angular 2. We will give up on Ionic 2.

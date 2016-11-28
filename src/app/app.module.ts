@@ -14,6 +14,9 @@ import { ForumModule } from './pages/forum/forum-module';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { AboutComponent } from './pages/about/about.component';
 import { LanguagePipeModule } from './pipes/language.pipe.module';
+import { JobIndexComponent } from './pages/job/job-index/job-index.component';
+import { JobEditComponent } from './pages/job/job-edit/job-edit.component';
+import { JobListComponent } from './pages/job/job-list/job-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { LanguagePipeModule } from './pipes/language.pipe.module';
     PageNotFoundComponent,
     HomeComponent,
     LayoutComponent,
-    AboutComponent
+    AboutComponent,
+    JobIndexComponent,
+    JobEditComponent,
+    JobListComponent
   ],
   imports: [
     BrowserModule,
