@@ -9,6 +9,7 @@ import { LoginComponent } from './pages/user/login/login.component';
 
 import { ROUTES as PHILGO_ROUTES } from './api/philgo-api/v2/philgo-api-module';
 import { ROUTES as FORUM_ROUTES } from './pages/forum/forum-module';
+import { ROUTES as JOB_ROUTES } from './pages/job/app/job-module';
 
 
 const appRoutes: Routes = [
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
 ];
 PHILGO_ROUTES.map( e => appRoutes.unshift( e ) );
 FORUM_ROUTES.map( e => appRoutes.unshift( e ) );
+JOB_ROUTES.map( e => appRoutes.unshift( e ) );
 //console.log('app.routing.module: ', appRoutes);
 
 @NgModule({

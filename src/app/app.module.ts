@@ -13,11 +13,9 @@ import { HomeComponent } from './pages/home/home.component';
 
 import { PhilgoApiModule } from './api/philgo-api/v2/philgo-api-module';
 import { ForumModule } from './pages/forum/forum-module';
+import { JobModule } from './pages/job/app/job-module';
 import { AboutComponent } from './pages/about/about.component';
 import { LanguagePipeModule } from './pipes/language.pipe.module';
-import { JobIndexComponent } from './pages/job/job-index/job-index.component';
-import { JobEditComponent } from './pages/job/job-edit/job-edit.component';
-import { JobListComponent } from './pages/job/job-list/job-list.component';
 import { RegisterComponent } from './pages/user/register/register.component';
 import { LoginComponent } from './pages/user/login/login.component';
 
@@ -27,9 +25,6 @@ import { LoginComponent } from './pages/user/login/login.component';
     PageNotFoundComponent,
     HomeComponent,
     AboutComponent,
-    JobIndexComponent,
-    JobEditComponent,
-    JobListComponent,
     RegisterComponent,
     LoginComponent
   ],
@@ -41,7 +36,8 @@ import { LoginComponent } from './pages/user/login/login.component';
     AppRouteModule,
     LanguagePipeModule,
     ForumModule,
-    PhilgoApiModule
+    PhilgoApiModule,
+    JobModule
   ],
   providers: [],
   bootstrap: [AppComponent]
