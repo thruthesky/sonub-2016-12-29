@@ -17,6 +17,8 @@ import { LanguagePipeModule } from './pipes/language.pipe.module';
 import { JobIndexComponent } from './pages/job/job-index/job-index.component';
 import { JobEditComponent } from './pages/job/job-edit/job-edit.component';
 import { JobListComponent } from './pages/job/job-list/job-list.component';
+import { RegisterComponent } from './pages/user/register/register.component';
+import { LoginComponent } from './pages/user/login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { JobListComponent } from './pages/job/job-list/job-list.component';
     AboutComponent,
     JobIndexComponent,
     JobEditComponent,
-    JobListComponent
+    JobListComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

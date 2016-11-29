@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Member } from '../../api/philgo-api/v2/member';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  login;
+  constructor( private router: Router, private member: Member ) {
+    this.login = member.getLogin();
+   }
 
   ngOnInit() {
+  }
+
+  onClickLogout() {
+    this.member.logout();
+    this.login = null;
+    this.router.navigate(['']);
   }
 
 }

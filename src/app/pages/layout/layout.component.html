@@ -1,12 +1,16 @@
 <header>
   <h1>
-    Layout
+    SONUB.COM
   </h1>
 </header>
 
 
 <nav>
   <a routerLink="" routerLinkActive="active">Home</a>
+  
+  <button *ngIf=" login " (click)="onClickLogout()">Logout</button>
+  <a *ngIf=" ! login " routerLink="/login" routerLinkActive="active">Login</a>
+  <a routerLink="/register" routerLinkActive="active">Register</a>
   <a routerLink="/about" routerLinkActive="active">About</a>
   <a routerLink="/file not found ??" routerLinkActive="active">Not Page</a>
   <br>
@@ -14,6 +18,11 @@
         <a routerLink="/test/philgo/home">Philgo Test Page</a><br>
 </nav>
 
-<div class="layout-content">
+<main class="layout-content">
 <router-outlet></router-outlet>
-</div>
+</main >
+
+
+<footer>
+  <h2>Conatct: sonub.com@gmail.com</h2>
+</footer>

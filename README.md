@@ -8,7 +8,10 @@ Social Netowrk Hub
 
 # TODO
 
-    - [] philgo api - photo uplod with file.philgo.com
+    - [] photo uplod with firebase
+        user philgo id as email, and member idx as idx.
+        1. register or login to philgo.
+            1.1 register or login to firebase with the "user_id@philgo.com", "Password-{user_idx}"
     - [] photo post like/dislike/report
     - [] philgo point update.
         - point on post and comment.
