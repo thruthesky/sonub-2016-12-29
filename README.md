@@ -8,13 +8,25 @@ Social Netowrk Hub
 
 # TODO
 
-    - [] philgo post test crud.
+    - [] philgo api - photo uplod with file.philgo.com
+    - [] photo post like/dislike/report
     - [] philgo point update.
+        - point on post and comment.
+        - point one time update for event. 'action=point-code&code=helloapp'
+
+
+    - [] JOB - don't let user input city, province. let them select to reduce human error on input.
+    - [] JOB - don't let user input input Work experience, let them select.
+    - [] JOB - permission on deleting photos on firebase storage.
+    - [] JOB - @see "fileupload" firebase storage image cache double check.
+
+
+    - [] @done philgo post test crud.
+    - [] @done philgo api database search
+    - [] @done Do post/comment create/update/delete without passing user id & session id on end-side api.
     - [] @done test on philgo api register.ts. member register login ==> data check ==> update ==> data check
 
-    - [] @fileupload do the file upload on file.philgo.com for security and maintainability.
 
-    - [] Convert sonub app to Angular 2. We will give up on Ionic 2.
     - [x] @deprecated - no more xbase
         - xbase-api needs https connection.
         - philgo-api is already has https connection.
@@ -23,25 +35,17 @@ Social Netowrk Hub
 
     - [] Simple input prompt box using ionic alertCtrl
         @see job-list::onClickDelete()
-    - [ ] If user has not photo, Photo Upload on User Profile. Social login users may have picture.
-    - [ ] Post CRUD & Comment CRUD on PhilGo.com
-    - [ ] Post CRUD & Comment CRUD on Xbase
-    - [ ] Search on Xbase
-    - [ ] Search on Philgo of google.
-    - [ ] Social login & Register/log in philgo and xbase 
+
+    - [] @deprecated Search on Xbase
+    - [] @deprecated Search on Philgo of google.
+    - [] @deprecated Social login & Register/log in philgo and xbase 
         - @comment : to work on this part, livereload should work on GenyMotion. as of ionic cli 2.1.12 & app-scripts 0.0.46, when running in genymotion, cordova is working but when running with livereload, cordova is not found.
 
+    - [-] @deprecated @later Need to improve Xbase login password for security.
+    - [-] @deprecated @later Philgo Logout and Xbase auto logout. At this time, when a user logs out in philgo, the user does not log out in xbase.
 
-    - [ ] JOB - don't let user input city, province. let them select to reduce human error on input.
-    - [ ] JOB - don't let user input input Work experience, let them select.
-    - [] JOB - permission on deleting photos on firebase storage.
-    - [] JOB - @see "fileupload" firebase storage image cache double check.
-
-    - [ ] @later Need to improve Xbase login password for security.
-    - [ ] @later Philgo Logout and Xbase auto logout. At this time, when a user logs out in philgo, the user does not log out in xbase.
-
-    - [x] @done *Philgo Login and Xbase Auto Login.*
-    - [x] @done *Philgo Registration and Xbase auto Registration
+    - [-] @deprecated @done *Philgo Login and Xbase Auto Login.*
+    - [-] @deprecated @done *Philgo Registration and Xbase auto Registration
 
 # Flowcharts
 
