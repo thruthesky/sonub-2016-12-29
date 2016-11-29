@@ -1,0 +1,58 @@
+<header>
+  <nav class="navbar navbar-fixed-top bg-faded">
+    <a routerLink="/job/post" routerLinkActive="active">POST</a>
+    <a routerLink="/job/list" routerLinkActive="active">LIST</a>
+  </nav>
+</header>
+
+<section class="content">
+  <div class="form-group">
+    <label for="workProfession">Work Profession</label>
+    <select class="form-control" id="workProfession" [(ngModel)]="data.category_1">
+      <option value="all">All</option>
+      <option value="housemaid">House Maid</option>
+      <option value="driver">Driver</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="workExperience">Work Experience</label>
+    <select class="form-control" id="workExperience" [(ngModel)]="data.extra_2">
+      <option value="all">All</option>
+      <option *ngFor="let number of numbers" [value]="number">{{number}} years</option>
+    </select>
+  </div>
+  <label>Province</label>
+  <div class="form-group">
+    <select class="form-control" id="searchByProvince" [(ngModel)]="data.province">
+      <option value="all">All</option>
+      <option *ngFor="let province of provinces" [value]="province">{{province}}</option>
+    </select>
+  </div>
+  <label *ngIf="showCities">Cities</label>
+  <div class="form-group" *ngIf="showCities">
+    <select class="form-control" id="searchByCities" [(ngModel)]="data.city">
+      <option value="all">All</option>
+      <option *ngFor="let key of cityKeys" [value]="key">{{cities[key]}} years</option>
+    </select>
+  </div>
+  <label>Gender</label>
+  <div class="row">
+    <div class="form-group" class="col-md-6">
+      <label for="male">Male</label>
+      <input type="checkbox" id="male" [(ngModel)]="data.male">
+    </div>
+    <div class="form-group" class="col-md-6">
+      <label for="male">Female</label>
+      <input type="checkbox" id="female" [(ngModel)]="data.female">
+    </div>
+  </div>
+
+
+
+</section>
+
+<footer>
+  <nav class="navbar navbar-fixed-bottom bg-faded">
+    <a class="navbar-brand" href="#">Copyright (c) 2016 ~ www.sonub.com</a>
+  </nav>
+</footer>
