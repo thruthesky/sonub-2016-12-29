@@ -1,6 +1,5 @@
-
 <header>
-  <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+  <nav class="navbar navbar-fixed-top">
     <a class="navbar-brand" routerLink="">S</a>
   <button *ngIf=" login " (click)="onClickLogout()">Logout</button>
   <a *ngIf=" ! login " routerLink="/login" routerLinkActive="active">Login</a>
@@ -10,13 +9,8 @@
   </nav>
 </header>
 
-
-
 <section class="content">
-<nav>
-        <a routerLink="/forum">Forum</a><br>
-        <a routerLink="/test/philgo/home">Philgo Test Page</a><br>
-</nav>
+    <h2>HOME PAGE</h2>
     <div *ngIf=" login ">You are logged in as {{ login.id }}</div>
     <div *ngIf=" ! login ">You are not logged in</div>
 </section>
@@ -24,7 +18,7 @@
 
 
 <footer>
-  <nav class="navbar navbar-fixed-bottom navbar-light bg-faded">
+  <nav class="navbar navbar-fixed-bottom">
     <a class="navbar-brand" href="#">Copyright (c) 2016 ~ www.sonub.com</a>
   </nav>
 </footer>

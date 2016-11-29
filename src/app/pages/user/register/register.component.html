@@ -1,4 +1,17 @@
 
+<header>
+  <nav class="navbar navbar-fixed-top">
+    <a class="navbar-brand" routerLink="">S</a>
+  <button *ngIf=" login " (click)="onClickLogout()">Logout</button>
+  <a *ngIf=" ! login " routerLink="/login" routerLinkActive="active">Login</a>
+  <a routerLink="/register" routerLinkActive="active">Register</a>
+  <a routerLink="/about" routerLinkActive="active">About</a>
+  <a routerLink="/job" routerLinkActive="active">JOB</a>
+  </nav>
+</header>
+
+<section class="content">
+    <h2>REGISTER PAGE</h2>
 
 <div>id:<input [(ngModel)]="form.id"></div>
 <div>pass:<input [(ngModel)]="form.password"></div>
@@ -8,4 +21,11 @@
 <div>mobile:<input [(ngModel)]="form.mobile"></div>
 <button (click)="onClickRegister()">Register</button>
 
+</section>
 
+
+<footer>
+    <nav class="navbar navbar-fixed-bottom">
+        Copyright (C) ....
+    </nav>
+</footer>
