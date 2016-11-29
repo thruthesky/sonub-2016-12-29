@@ -1,4 +1,5 @@
 export let Config = {
     name: 'Sonub',
-    language: 'ko'
+    language: 'ko',
+    urlPhilgoServer: 'https://www.philgo.com/index.php'
 }

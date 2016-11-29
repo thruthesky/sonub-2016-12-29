@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   onClickRegister() {
 
     this.member.register( this.form, login => {
-
+      // this.router.navigate(['']);
     }, error => alert("Login error: " + error ) );
   }
 

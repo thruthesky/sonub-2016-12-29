@@ -72,6 +72,7 @@ Social Netowrk Hub
 
 # TEST
 
+* Do not test or stress the real server.
 * All tests must follow DeepLinker test.
 * For instance, a test might be run like below.
 
@@ -101,6 +102,9 @@ Social Netowrk Hub
 * npm install firebase --save
 
 
+# Layout of the app & Component
+
+* @see [App Layout](https://docs.google.com/document/d/1ZEplms60Dr9U4gMCvqxjMEAbyrH5duPkifEqxuPUiYc/edit#)
 
 # User Registration
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Member, MEMBER_LOGIN_DATA } from '../../api/philgo-api/v2/member';
 
 @Component({
@@ -9,13 +10,18 @@ import { Member, MEMBER_LOGIN_DATA } from '../../api/philgo-api/v2/member';
 export class HomeComponent implements OnInit {
 
   login = <MEMBER_LOGIN_DATA> {};
-  constructor( private member: Member ) {
+  constructor( private router: Router, private member: Member ) {
     this.login = member.getLoginData();
   }
 
   ngOnInit() {
   }
 
+  onClickLogout() {
+    this.member.logout();
+    this.login = null;
+    this.router.navigate(['']);
+  }
 
 
 }

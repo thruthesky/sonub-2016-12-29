@@ -10,10 +10,4 @@ export class AppComponent {
   constructor( private router: Router ) {
 
   }
-  onClickTwoPage() {
-    this.router.navigate( [ '/two' ], {
-      queryParams: { name: 'JaeHo Song', age: 44 },
-      fragment: 'anchor-profile'
-    } );
-  }
 }
