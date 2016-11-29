@@ -24,6 +24,9 @@ export interface SearchData {
 })
 export class JobIndexComponent implements OnInit {
 
+
+  range: number = 34;
+
   items: Observable<Array<string>>;
   term = new FormControl();
   numbers = Array.from(new Array(20), (x,i) => i+1);
@@ -68,6 +71,10 @@ export class JobIndexComponent implements OnInit {
         console.log('error location.get_cities::', e);
       });
     }
+  }
+
+  onChange() {
+    console.log("onChange() form has changed. you can search now: data: ", this.data);
   }
 
 }

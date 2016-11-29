@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { Post } from '../../../api/philgo-api/v2/post';
 import { JobIndexComponent } from '../pages/job-index/job-index.component';
 import { JobListComponent } from "../pages/job-list/job-list.component";
@@ -19,7 +20,8 @@ export let ROUTES = [
   ],
   imports: [
       BrowserModule,
-      FormsModule
+      FormsModule,
+      RouterModule
   ],
   providers: [ Post, Location ]
 })
