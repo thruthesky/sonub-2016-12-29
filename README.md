@@ -90,6 +90,7 @@ Social Netowrk Hub
 * git submodule foreach git checkout master
 
 
+* npm install @ng-bootstrap/ng-bootstrap --save
 * npm install @types/lodash --save
 
 * npm install firebase --save
