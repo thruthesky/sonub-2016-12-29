@@ -6,57 +6,75 @@
 </header>
 
 <section class="content">
-  <div class="form-group">
-    <label for="workProfession">Work Profession</label>
-    <select class="form-control" id="workProfession" [(ngModel)]="data.category_1" (change)="onChange()">
-      <option value="all">All</option>
-      <option value="housemaid">House Maid</option>
-      <option value="driver">Driver</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="workExperience">Work Experience</label>
-    <select class="form-control" id="workExperience" [(ngModel)]="data.extra_2">
-      <option value="all">All</option>
-      <option *ngFor="let number of numbers" [value]="number">{{number}} years</option>
-    </select>
-  </div>
-  <label>Province</label>
-  <div class="form-group">
-    <select class="form-control" id="searchByProvince" [(ngModel)]="data.province">
-      <option value="all">All</option>
-      <option *ngFor="let province of provinces" [value]="province">{{province}}</option>
-    </select>
-  </div>
-  <label *ngIf="showCities">Cities</label>
-  <div class="form-group" *ngIf="showCities">
-    <select class="form-control" id="searchByCities" [(ngModel)]="data.city">
-      <option value="all">All</option>
-      <option *ngFor="let key of cityKeys" [value]="key">{{cities[key]}} years</option>
-    </select>
-  </div>
-  <label>Gender</label>
-  <div class="row">
-    <div class="form-group" class="col-md-6">
-      <label for="male">Male</label>
-      <input type="checkbox" id="male" [(ngModel)]="data.male">
+  <div class="form-group row">
+    <label class="col-xs-3 col-form-label"  for="workProfession">Work Profession</label>
+    <div class="col-xs-9">
+      <select class="form-control" id="workProfession" name="workProfession" [(ngModel)]="data.category" (change)="search()">
+        <option value="all">All</option>
+        <option value="housemaid">House Maid</option>
+        <option value="driver">Driver</option>
+      </select>
     </div>
-    <div class="form-group" class="col-md-6">
-      <label for="male">Female</label>
-      <input type="checkbox" id="female" [(ngModel)]="data.female">
+  </div>
+  <div class="form-group row">
+    <label class="col-xs-3" for="workExperience">Work Experience</label>
+    <div class="col-xs-9">
+      <select class="form-control" id="workExperience" name="workExperience" [(ngModel)]="data.int_1" (change)="search()">
+        <option value="all">All</option>
+        <option *ngFor="let number of numbers" [value]="number">{{number}} years</option>
+      </select>
     </div>
   </div>
 
+  <div class="form-group row">
+    <label class="col-xs-3 col-form-label">Province</label>
+    <div class="col-xs-9">
+      <select class="form-control" id="searchByProvince" name="province" [(ngModel)]="data.varchar_1" (change)="onClickProvince()">
+        <option value="all">All</option>
+        <option *ngFor="let province of provinces" [value]="province">{{province}}</option>
+      </select>
+    </div>
+  </div>
 
-Age:
+  <div class="form-group row" *ngIf="showCities">
+    <label class="col-xs-3 col-form-label" *ngIf="showCities">City</label>
+    <div class="col-xs-9">
+      <select class="form-control" id="searchByCities" name="city" [(ngModel)]="data.varchar_2" (change)="search()">
+        <option value="all">All</option>
+        <option *ngFor="let key of cityKeys" [value]="key">{{cities[key]}}</option>
+      </select>
+    </div>
+  </div>
 
-18 :
-<input type="range" name="min_age" min="18" max="34" value="20" [(ngModel)]="min">
+  <div class="form-group row">
+    <label for="name" class="col-xs-3 col-form-label">Search By Name</label>
+    <div class="col-xs-9">
+      <input class="form-control" type="text" id="name"  [(ngModel)]="data.name" (keyup)="onChange()" placeholder="Input Name...">
+    </div>
+  </div>
 
-<br>
+  <div class="form-group row">
+    <label class="col-xs-3 col-form-label">Gender</label>
+    <div class="col-xs-9">
+      <label class="form-check-inline col-xs-3">
+        <input class="form-check-input" type="radio" name="genderRadio" id="both" value="all"> All
+      </label>
+      <label class="form-check-inline col-xs-3">
+        <input class="form-check-input" type="radio" name="genderRadio" id="male" value="m"> Male
+      </label>
+      <label class="form-check-inline col-xs-3">
+        <input class="form-check-input" type="radio" name="genderRadio" id="female" value="f"> Female
+      </label>
+    </div>
+  </div>
 
-min: {{ min }}
-max: {{ max }}
+  <div *ngIf="searching">
+    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+  </div>
+
+
+
 
 </section>
 
