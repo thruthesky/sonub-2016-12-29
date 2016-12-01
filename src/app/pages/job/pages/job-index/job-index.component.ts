@@ -54,8 +54,8 @@ export class JobIndexComponent implements OnInit {
   }
 
   onClickProvince() {
-    this.data.varchar_2 = 'all';
     if( this.data.varchar_1 != 'all') {
+      this.data.varchar_2 = this.data.varchar_1;
       this.location.get_cities( this.data.varchar_1, re => {
         console.log('cities', re);
         if(re) {
