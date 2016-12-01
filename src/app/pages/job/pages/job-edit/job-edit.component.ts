@@ -11,6 +11,8 @@ import { Post, POST_DATA } from '../../../../api/philgo-api/v2/post';
 export class JobEditComponent implements OnInit {
 
   form : POST_DATA = <POST_DATA> {
+    subject: 'Job Post Title',
+    content: 'Job Post Content',
     post_id: 'jobs',
     sub_category: '', //sub_category
     text_1: '', //first name
@@ -27,8 +29,6 @@ export class JobEditComponent implements OnInit {
     int_2: '', //day
     int_3: '', //month
     int_4: '', //day
-
-
   };
   loader: boolean = false;
   errorOnPost = null;
@@ -38,8 +38,8 @@ export class JobEditComponent implements OnInit {
   showCities: boolean = false;
 
   constructor(
-      private location: Location,
-      private post: Post
+    private location: Location,
+    private post: Post
   ) {
     location.get_province( re => {
       this.provinces = re;
@@ -93,7 +93,9 @@ export class JobEditComponent implements OnInit {
     console.log('createPost::');
     this.post.create( this.form, data => {
         console.log("post create success: ", data);
-      this.openConfirmation();
+        this.openConfirmation();
+        this.loader = false;
+        this.clearInputs();
       },
       error => alert( error ),
       () => {}
@@ -107,4 +109,30 @@ export class JobEditComponent implements OnInit {
   updatePost() {
     console.log('createPost::');
   }
+
+  clearInputs(){
+    this.form = {
+      subject: 'Job Post Title',
+      content: 'Job Post Content',
+      post_id: 'jobs',
+      sub_category: '', //sub_category
+      text_1: '', //first name
+      text_2: '', //middle name
+      text_3: '', //last name
+      char_1: 'M', //Gender
+      varchar_1: '', //address
+      varchar_2: 'all', //province
+      varchar_3: 'all', //city
+      varchar_4: '', //mobile
+      varchar_5: '2010-01-25', //birthday
+      varchar_6: '', //Personal Content
+      int_1: '0', //work experience
+      int_2: '', //day
+      int_3: '', //month
+      int_4: '', //day
+    };
+    this.showCities = false;
+  }
+
+
 }
