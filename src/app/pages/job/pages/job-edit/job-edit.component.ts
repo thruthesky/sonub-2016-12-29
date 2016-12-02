@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from  '../../providers/location'
 import { Post, POST_DATA } from '../../../../api/philgo-api/v2/post';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-job-edit',
@@ -39,13 +39,28 @@ export class JobEditComponent implements OnInit {
 
   constructor(
     private location: Location,
-    private post: Post
+    private post: Post,
+    private router: Router
   ) {
     location.get_province( re => {
       this.provinces = re;
     }, e => {
       console.log('error location.get_province::', e);
     });
+
+
+    let idx = localStorage.getItem("post_idx");
+    if( idx ){
+      this.post.get(idx, re=> {
+        console.log('re data',re.post);
+        localStorage.removeItem("post_idx");
+        if(re.post) {
+          this.form = re.post;
+        }
+      }, e => {
+        console.log('error on getting idx', e);
+      })
+    }
   }
 
   get cityKeys() {
@@ -90,10 +105,11 @@ export class JobEditComponent implements OnInit {
   }
 
   createPost() {
-    console.log('createPost::');
+    console.log('createPost:: ', this.form);
+    this.post.debug =true;
     this.post.create( this.form, data => {
         console.log("post create success: ", data);
-        this.openConfirmation();
+        this.openConfirmation('Success::Your post has been Posted.');
         this.loader = false;
         this.clearInputs();
       },
@@ -102,12 +118,18 @@ export class JobEditComponent implements OnInit {
     )
   }
 
-  openConfirmation() {
-    alert('Success::Your post has been posted.');
+  openConfirmation(msg) {
+    alert(msg);
   }
 
   updatePost() {
-    console.log('createPost::');
+    console.log('UpdatePost::');
+    this.post.update( this.form, data => {
+      console.log("post update : ", data);
+      this.loader = false;
+      this.openConfirmation('Success::Your post has been Updated.');
+      this.router.navigate( [ '/job/list' ] );
+    }, er => alert( er ));
   }
 
   clearInputs(){

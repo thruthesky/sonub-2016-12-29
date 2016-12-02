@@ -27,11 +27,10 @@ export class ForumIndexComponent implements OnInit {
   ngOnInit() {
   }
 
-  
+
   onClickForum( post_id ) {
     console.log('onClickForum() post_id: ', post_id);
     this.router.navigate( [ '/forum', post_id ] );
-
   }
 
 
