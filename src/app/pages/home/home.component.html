@@ -6,6 +6,15 @@
   <a routerLink="/register" routerLinkActive="active">Register</a>
   <a routerLink="/about" routerLinkActive="active">About</a>
   <a routerLink="/job" routerLinkActive="active">JOB</a>
+
+    <div ngbDropdown class="d-inline-block">
+      <div ngbDropdownToggle>JOB</div>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" routerLink="/job" routerLinkActive="active">JOB HOME</a>
+        <a class="dropdown-item" routerLink="/job/post" routerLinkActive="active">JOB POST</a>
+        <a class="dropdown-item" routerLink="/job/list" routerLinkActive="active">JOB LIST</a>
+      </div>
+    </div>
   </nav>
 </header>
 

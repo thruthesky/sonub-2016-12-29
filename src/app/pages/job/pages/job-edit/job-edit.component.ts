@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from  '../../providers/location'
 import { Post, POST_DATA } from '../../../../api/philgo-api/v2/post';
 import { Router } from '@angular/router';
+import { Location as _Location } from '@angular/common';
 
 @Component({
   selector: 'app-job-edit',
@@ -39,6 +40,7 @@ export class JobEditComponent implements OnInit {
 
   constructor(
     private location: Location,
+    private _location: _Location,
     private post: Post,
     private router: Router
   ) {
@@ -156,5 +158,7 @@ export class JobEditComponent implements OnInit {
     this.showCities = false;
   }
 
-
+  onClickBack(){
+    this._location.back();
+  }
 }

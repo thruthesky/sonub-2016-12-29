@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Post} from '../../../../api/philgo-api/v2/post';
-import { PAGE_DATA, POSTS, POST_RESPONSE } from '../../../../api/philgo-api/v2/philgo-api-interface';
+import { POSTS } from '../../../../api/philgo-api/v2/philgo-api-interface';
 import { Router } from '@angular/router';
+import { Location as _Location } from '@angular/common';
 
 @Component({
   selector: 'app-job-list',
@@ -14,7 +15,8 @@ export class JobListComponent implements OnInit {
   post_id = 'jobs';
   page: number = 0;
   constructor(private post: Post,
-              private router: Router
+              private router: Router,
+              private _location: _Location
   ) {
     this.loadPosts();
   }
@@ -51,6 +53,10 @@ export class JobListComponent implements OnInit {
   onClickEdit(idx){
     localStorage.setItem("post_idx", idx);
     this.router.navigate(['/job/post']);
+  }
+
+  onClickBack(){
+    this._location.back();
   }
 
 }
